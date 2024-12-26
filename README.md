@@ -1,4 +1,4 @@
-# 8-Queens
+# N-Queens
 
 This project implements an interactive 8 Queens Puzzle using HTML, CSS, and JavaScript, where users manually place queens on a chessboard following these rules: 
 
