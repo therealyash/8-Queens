@@ -33,6 +33,17 @@ body {
 
 /* Title and Status Styles */
 h1 {
+  margin-top: 10px;
+  color: #d1d0c5;
+  font-size: 2rem;
+}
+h2 {
+  margin-top: 20px;
+  color: #d1d0c5;
+  font-size: 2.5rem;
+}
+
+h3 {
   margin-top: 20px;
   color: #d1d0c5;
   font-size: 2.5rem;
