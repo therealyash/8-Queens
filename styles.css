@@ -1,73 +1,159 @@
+/* Apply JetBrains Mono font and dark background */
 body {
-    font-family: Poppins, sans-serif;
-    text-align: center;
-    margin: 0;
-    padding: 0;
-    background-color: #f8f9fa;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center; 
-    height: 100vh;
-  }
-  
-  h1 {
-    margin-top: 20px;
-    color: #333;
-  }
-  
-  #status {
-    margin: 10px 0;
-    color: #555;
-    font-size: 16px;
-  }
-  
-  #chessboard {
-    display: grid;
-    grid-template-columns: repeat(8, 60px);
-    grid-template-rows: repeat(8, 60px);
-    background-color: white;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    margin: 20px 0;
-  }
-  
-  .cell {
-    width: 60px;
-    height: 60px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 36px;
-    cursor: pointer;
-    border: 1px solid #bababa; 
-    box-sizing: border-box; 
-  }
-  
-  .cell:nth-child(even) {
-    background-color: #f0f0f0;
-  }
-  
-  .cell:nth-child(odd) {
-    background-color: white;
-  }
-  
-  .queen {
-    color: red;
-    font-size: 36px;
-  }
-  
-  #resetButton {
-    padding: 10px 20px;
-    font-size: 16px;
-    color: white;
-    background-color: #007bff;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-  }
-  
-  #resetButton:hover {
-    background-color: #0056b3;
-  }
-  
+  font-family: 'JetBrains Mono', monospace;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+  background-color: #141414; /* Dark background */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+/* Header Styles */
+.navbar {
+  background-color: #1e1e1e; /* Matching grey for header */
+  border-bottom: 1px solid #323437;
+}
+
+.navbar-brand {
+  font-size: 1.5rem;
+  color: #f5c000; /* MonkeyType yellow */
+}
+
+.navbar-toggler {
+  border-color: #f5c000; /* Yellow for toggle button */
+}
+
+.navbar-toggler-icon {
+  background-color: #f5c000; /* Yellow icon */
+}
+
+/* Title and Status Styles */
+h1 {
+  margin-top: 20px;
+  color: #d1d0c5;
+  font-size: 2.5rem;
+}
+
+#status {
+  margin: 10px 0;
+  color: #d1d0c5;
+  font-size: 1rem;
+}
+
+/* Chessboard Styles */
+#chessboard {
+  display: grid;
+  grid-template-columns: repeat(8, 60px);
+  grid-template-rows: repeat(8, 60px);
+  background-color: #1e1e1e;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  margin: 20px 0;
+  border: 2px solid #323437;
+  border-radius: 5px;
+}
+
+.cell {
+  width: 60px;
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 36px;
+  cursor: pointer;
+  border: 1px solid #323437;
+  box-sizing: border-box;
+  background-color: #202020;
+}
+
+.queen {
+  color: white;
+  font-size: 36px;
+}
+
+/* Reset Button Style */
+#resetButton {
+  padding: 10px 20px;
+  font-size: 18px;
+  font-weight: bold;
+  color: #2a2a2a; /* Dark grey text */
+  background-color: #f5c000;  /* Yellow similar to MonkeyType */
+  border: none;
+  border-radius: 50px; /* Rounded corners */
+  cursor: pointer;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.4);
+}
+
+#resetButton:hover {
+  background-color: #e4b100; /* Darker yellow */
+}
+
+/* Timer Styles */
+#timer {
+  background-color: #f5c000; /* Yellow for timer */
+  color: #2a2a2a;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-size: 1.5rem;
+  font-weight: bold;
+  z-index: 1000;
+}
+
+/* Instructions Section */
+#instructions {
+  background-color: #2b2b2b;
+  color: #ffffff;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+#instructions h3 {
+  font-family: 'Jetbrains Mono', sans-serif;
+  color: #f39c12;  /* Gold color for headers */
+}
+
+#instructions ul {
+  list-style-type: none;
+  padding-left: 20px;
+}
+
+#instructions li {
+  font-family: 'Jetbrains Mono', sans-serif;
+  margin-bottom: 10px;
+  font-size: 16px;
+}
+
+/* Instructions Container */
+.instructions-container {
+  position: absolute;
+  left: 5%; /* Adjust this to position it to the left of the board */
+  top: 50%;
+  transform: translateY(-50%); /* Vertically center the instructions */
+  background-color: #2b2b2b;
+  color: #ffffff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+  width: 300px; /* Adjust width to fit text */
+}
+
+.instructions-text {
+  font-family: 'Jetbrains Mono', sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+/* Timer and Reset Button Container */
+.timer-container {
+  display: flex;
+  align-items: center; /* Align both items vertically */
+  gap: 20px; /* Space between the timer and reset button */
+  position: absolute;
+  top: 50%; /* Vertically center the container */
+  right: 50px; /* Position from the right edge */
+  transform: translateY(-50%); /* Adjust to perfectly center vertically */
+}
